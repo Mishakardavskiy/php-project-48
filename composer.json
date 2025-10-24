@@ -1,13 +1,19 @@
 {
     "name": "hexlet/code",
+    "bin": [
+	    "bin/gendiff"
+    ],
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
-        }
+        },
+        "files": [
+		"src/parser.php"
+	]
     },
     "authors": [
         {
-            "name": "yes"
+            "name": "Mikhail Almakaev"
         }
     ],
     "require": {

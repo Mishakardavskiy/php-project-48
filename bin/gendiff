@@ -13,6 +13,7 @@ if (file_exists($autoloadPath1)) {
 }
 
 use Docopt;
+use function PhpProject48\Parser\parsing;
 
 $doc =  <<<DOC
 Generate diff
@@ -29,6 +30,12 @@ Options:
 
 DOC;
 
-$args = Docopt::handle($doc, array('version'=>'Generate diff'));
+$args = Docopt::handle($doc, array('version'=>'Generate diff'));//Docopt::handle - обращение к статическому методу
 foreach ($args as $k => $v)
  echo $k . ': '. json_encode($v) . PHP_EOL;
+
+$file1 = parsing($args['<firstFile>']);
+$file2 = parsing($args['<secondFile>']);
+
+var_dump($file1);
+var_dump($file2);
