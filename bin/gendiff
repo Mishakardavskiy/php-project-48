@@ -14,6 +14,7 @@ if (file_exists($autoloadPath1)) {
 
 use Docopt;
 use function PhpProject48\Parser\parsing;
+use function PhpProject48\Parser\genDiff;
 
 $doc =  <<<DOC
 Generate diff
@@ -35,7 +36,9 @@ foreach ($args as $k => $v)
  echo $k . ': '. json_encode($v) . PHP_EOL;
 
 $file1 = parsing($args['<firstFile>']);
+//var_dump($file1);
 $file2 = parsing($args['<secondFile>']);
-
-var_dump($file1);
-var_dump($file2);
+$diff = genDiff($file1, $file2);
+//var_dump($file1);
+//var_dump($file2);
+print_r($diff);
