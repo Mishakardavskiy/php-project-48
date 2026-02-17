@@ -1,5 +1,5 @@
 {
-    "name": "hexlet/code",
+    "name": "Differ",
     "description": "A package for finding differences between two flat files",
     "bin": [
 	    "bin/gendiff"
